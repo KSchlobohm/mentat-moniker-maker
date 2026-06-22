@@ -103,7 +103,7 @@ dotnet test --logger "console;verbosity=normal"
 ## Project Structure
 
 ```
-repo-name-generator/
+mentat-moniker-maker/
 ├── src/
 │   ├── RepoNameGenerator.csproj
 │   ├── Program.cs              # CLI entry point
