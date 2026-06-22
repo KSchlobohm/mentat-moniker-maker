@@ -1,14 +1,16 @@
 namespace RepoNameGenerator;
 
-internal static class NameGenerator
+public static class NameGenerator
 {
     // ~10% chance of using the three-word "adjective-octo-noun" format,
     // mirroring GitHub's occasional use of their Octocat mascot in the middle.
     private const double OctoChance = 0.1;
 
-    internal static IEnumerable<string> Generate(int count)
+    /// <summary>Generates <paramref name="count"/> unique random repo names.</summary>
+    /// <param name="rng">Optional seeded RNG; uses <see cref="Random.Shared"/> when null.</param>
+    public static IEnumerable<string> Generate(int count, Random? rng = null)
     {
-        var rng = Random.Shared;
+        rng ??= Random.Shared;
         var usedAdjectives = new HashSet<string>(count);
         var usedNouns = new HashSet<string>(count);
 
@@ -24,7 +26,7 @@ internal static class NameGenerator
         }
     }
 
-    private static string PickUnused(string[] pool, HashSet<string> used, Random rng)
+    internal static string PickUnused(string[] pool, HashSet<string> used, Random rng)
     {
         // Guard against requesting more unique items than the pool contains.
         if (used.Count >= pool.Length)

@@ -1,10 +1,10 @@
 namespace RepoNameGenerator;
 
-internal static class WordLists
+public static class WordLists
 {
     // Adjectives modeled on GitHub's observed vocabulary:
     // whimsical, action-y, and descriptive — no nature themes.
-    internal static readonly string[] Adjectives =
+    public static readonly string[] Adjectives =
     [
         "adorable", "adventurous", "affectionate", "agile", "amazing",
         "animated", "astral", "audacious", "automatic", "awesome",
@@ -45,7 +45,7 @@ internal static class WordLists
 
     // Nouns modeled on GitHub's observed vocabulary:
     // concrete, quirky, and memorable objects — often whimsical.
-    internal static readonly string[] Nouns =
+    public static readonly string[] Nouns =
     [
         "adventure", "algorithm", "anvil", "artifact", "barnacle",
         "bassoon", "beacon", "biscuit", "blizzard", "blueprint",
@@ -81,5 +81,5 @@ internal static class WordLists
 
     // GitHub occasionally inserts "octo" as a middle word as a nod to Octocat.
     // When the three-word format is used: adjective-octo-noun
-    internal static readonly string OctoInfix = "octo";
+    public static readonly string OctoInfix = "octo";
 }
